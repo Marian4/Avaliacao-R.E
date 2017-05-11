@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<title></title>
+	<script src="js/lib/angular.min.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/router/router.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/css.css">
+	<style type="text/css">
+		.well{
+			margin:150px; 
+			margin-left:500px;
+			margin-right:500px;
+			margin-bottom:150px;
+		}
+		button,input{
+			width: 325px;
+		}
+		body{
+			background-color:#43CD80;
+		}
+	</style>
+</head>
+<body> <!--ng-cloak-->
+	<div class="well">
+		<center><label><h2>Matrícula</h2></label></center>
+		<input type="text" name="matricula" required class="form-control"><br>
+		<center><button type="submit" class="btn btn-primary">Entrar</button></center>
+	</div>
+	<!--<div ng-view>
+		
+	</div>-->
+</body>
+</html>
