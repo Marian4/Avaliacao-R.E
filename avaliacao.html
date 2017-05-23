@@ -6,7 +6,7 @@
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<style>
 		body{
-			background-color: #363636;
+			background-color:#363636;
 			text-align: justify;
 		}
 		.well{
@@ -18,38 +18,39 @@
 			background-color: #43CD80;
 			border-color: transparent;
 		}
-		.estrelas input[type=radio] {
+		.estrelas1 input[type=radio] {
   			display: none;
 		}
-		.estrelas label i.fa:before {
+		.estrelas1 label i.fa:before {
   			content:'\f005';
+  			font-size: 30px;
   			color: #FC0;
 		}
-		.estrelas input[type=radio]:checked ~ label i.fa:before {
+		.estrelas1 input[type=radio]:checked ~ label i.fa:before{
   			color: #CCC;
   		}
+		.estrelas2 input[type=radio] {
+  			display: none;
+		}
+		.estrelas2 label i.fa:before {
+  			content:'\f005';
+  			font-size: 30px;
+  			color: #FC0;
+		}
+		.estrelas2 input[type=radio]:checked ~ label i.fa:before{
+  			color: #CCC;
+  		}
+  		label{
+  			width:35px;
+  		}
+  		
 	</style>
 </head>
 <body>
 <div class="well">
-	<h3>1-Qual a qualidade da refeição oferecida pelo restaurante estudantil (R.E)?<br><br>
+	<h3>Qual a qualidade da refeição oferecida pelo restaurante estudantil (R.E)?<br><br>
 	<br>
-<div class="estrelas">
-  	<input type="radio" id="cm_star-empty" name="fb" value="" checked/>
-  	<label for="cm_star-1"><i class="fa"></i></label>
-  	<input type="radio" id="cm_star-1" name="fb" value="1"/>
-  	<label for="cm_star-2"><i class="fa"></i></label>
-  	<input type="radio" id="cm_star-2" name="fb" value="2"/>
-  	<label for="cm_star-3"><i class="fa"></i></label>
-  	<input type="radio" id="cm_star-3" name="fb" value="3"/>
-  	<label for="cm_star-4"><i class="fa"></i></label>
-  	<input type="radio" id="cm_star-4" name="fb" value="4"/>
-  	<label for="cm_star-5"><i class="fa"></i></label>
-  	<input type="radio" id="cm_star-5" name="fb" value="5"/>
-</div>
-	<br><br>
-	2-Qual a relevância do NUTRIF no processo de controle de entrada do R.E e pretensão da refeição?<br><br><br>
-	<div class="estrelas2">
+<center><div class="estrelas1">
   	<input type="radio" id="cm_star-empty" name="fb" value="" checked/>
   	<label for="cm_star-1-1"><i class="fa"></i></label>
   	<input type="radio" id="cm_star-1-1" name="fb" value="1"/>
@@ -61,8 +62,43 @@
   	<input type="radio" id="cm_star-4-1" name="fb" value="4"/>
   	<label for="cm_star-5-1"><i class="fa"></i></label>
   	<input type="radio" id="cm_star-5-1" name="fb" value="5"/>
-</div>
+  	<label for="cm_star-6-1"><i class="fa"></i></label>
+  	<input type="radio" id="cm_star-6-1" name="fb" value="1"/>
+  	<label for="cm_star-7-1"><i class="fa"></i></label>
+  	<input type="radio" id="cm_star-7-1" name="fb" value="2"/>
+  	<label for="cm_star-8-1"><i class="fa"></i></label>
+  	<input type="radio" id="cm_star-8-1" name="fb" value="3"/>
+  	<label for="cm_star-9-1"><i class="fa"></i></label>
+  	<input type="radio" id="cm_star-9-1" name="fb" value="4"/>
+  	<label for="cm_star-10-1"><i class="fa"></i></label>
+  	<input type="radio" id="cm_star-10-1" name="fb" value="5"/>
+</div></center>
 	<br><br>
+	Qual a relevância do NUTRIF no processo de controle de entrada do R.E e pretensão da refeição?<br><br><br>
+	<center><div class="estrelas2">
+  	<input type="radio" id="cm_star-empty" name="fb2" value="" checked/>
+  	<label for="cm_star-1-2"><i class="fa"></i></label>
+  	<input type="radio" id="cm_star-1-2" name="fb2" value="1"/>
+  	<label for="cm_star-2-2"><i class="fa"></i></label>
+  	<input type="radio" id="cm_star-2-2" name="fb2" value="2"/>
+  	<label for="cm_star-3-2"><i class="fa"></i></label>
+  	<input type="radio" id="cm_star-3-2" name="fb2" value="3"/>
+  	<label for="cm_star-4-2"><i class="fa"></i></label>
+  	<input type="radio" id="cm_star-4-2" name="fb2" value="4"/>
+  	<label for="cm_star-5-2"><i class="fa"></i></label>
+  	<input type="radio" id="cm_star-5-2" name="fb2" value="5"/>
+  	<label for="cm_star-6-2"><i class="fa"></i></label>
+  	<input type="radio" id="cm_star-6-2" name="fb2" value="1"/>
+  	<label for="cm_star-7-2"><i class="fa"></i></label>
+  	<input type="radio" id="cm_star-7-2" name="fb2" value="2"/>
+  	<label for="cm_star-8-2"><i class="fa"></i></label>
+  	<input type="radio" id="cm_star-8-2" name="fb2" value="3"/>
+  	<label for="cm_star-9-2"><i class="fa"></i></label>
+  	<input type="radio" id="cm_star-9-2" name="fb2" value="4"/>
+  	<label for="cm_star-10-2"><i class="fa"></i></label>
+  	<input type="radio" id="cm_star-10-2" name="fb2" value="5"/>
+</div></center>
+	<br><br><br>
 	<center><button type="submit" class="btn btn-primary">Avaliar</button></center>
 	<br><br><br>
 </div>
