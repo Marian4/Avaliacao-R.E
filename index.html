@@ -1,12 +1,19 @@
 <!DOCTYPE html>
-<html ng-app="app">
+<html ng-app>
 <head>
 	<title></title>
+	<!-- js -->
 	<script src="js/lib/angular.min.js"></script>
+	<script src="js/lib/angular-route.min.js"></script>
+    <script src="js/lib/angular-ui-router.min.js"></script>
+    <script src="js/lib/angular-sanitize.min.js"></script>
+    <script src="js/lib/angular-animate.min.js"></script>
+    <script src="js/lib/angular-aria.min.js"></script>
 	<script src="js/app.js"></script>
 	<script src="js/router/router.js"></script>
+	<!-- css -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/css.css">
+	<link rel="stylesheet" href="css/home.css">
 	<style type="text/css">
 		.well{
 			margin:150px; 
@@ -21,17 +28,18 @@
 			border:none;
 			border-color:transparent;
 			background-color: #43CD80;
-			color:#FFFFFF;
 		}
 		body{
-			background-image: url(img/refeitório.jpg);
+			background-image: url(img/background.jpg);
+			background-size: cover;
+		}
 	</style>
 </head>
-<body> <!--ng-cloak-->
+<body > <!--ng-cloak-->
 	<div class="well">
-		<center><label><h2>Matrícula</h2></label></center>
-		<input type="text" name="matricula" required class="form-control"><br>
-		<center><button type="submit" class="btn btn-primary">Entrar</button></center>
+	<center><label><h2>Matrícula</h2></label></center>
+	<input type="text" placeholder="Digite sua matrícula" name="matricula" required class="form-control"><br>
+	<center><a href="avaliacao.html"><button type="submit" class="btn btn-primary">Entrar</button></a></center>
 	</div>
 	<!--<div ng-view>
 		

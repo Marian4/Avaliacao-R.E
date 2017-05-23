@@ -1,0 +1,18 @@
+/*.well{
+	margin:150px; 
+	margin-left:500px;
+	margin-right:500px;
+	margin-bottom:150px;
+}
+button{
+	width: 325px;
+}
+.btn.btn-primary{
+	border:none;
+	border-color:transparent;
+	background-color: #43CD80;
+}
+body{
+	background-image: url(img/background.jpg);
+	background-size: cover;
+}*/
