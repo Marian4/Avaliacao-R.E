@@ -6,14 +6,13 @@ app.config(function ($routeProvider, $locationProvider) {
 
     $routeProvider
         .when("/", {
-            templateUrl: "home.html",
-			controller: "ctrlAvaliacao"
+            templateUrl: "views/home.html",
+			controller: "ctrlHome"
 
         });
     $routeProvider
         .when("/avaliacao", {
-            templateUrl: "avaliacao.html",
+            templateUrl: "views/avaliacao.html",
 			controller: "ctrlAvaliacao"
         });
 });
-/*acho q pra fazer com o da avaliação vc tem q separar o css dele e tbm tirar a ag html e deixar só o conteúdo (y)*/
