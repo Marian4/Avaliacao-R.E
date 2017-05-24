@@ -1,53 +1,54 @@
-<!DOCTYPE html>
-<html class="container">
+<html>
 <head>
-	<title></title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-	<style>
-		body{
-			background-color:#363636;
-			text-align: justify;
-		}
-		.well{
-			margin-left:250px;
-			margin-right:250px;
-		}
-		.btn.btn-primary{
-			width: 325px;
-			background-color: #43CD80;
-			border-color: transparent;
-		}
-		.estrelas1 input[type=radio] {
-  			display: none;
-		}
-		.estrelas1 label i.fa:before {
-  			content:'\f005';
-  			font-size: 30px;
-  			color: #FC0;
-		}
-		.estrelas1 input[type=radio]:checked ~ label i.fa:before{
-  			color: #CCC;
-  		}
-		.estrelas2 input[type=radio] {
-  			display: none;
-		}
-		.estrelas2 label i.fa:before {
-  			content:'\f005';
-  			font-size: 30px;
-  			color: #FC0;
-		}
-		.estrelas2 input[type=radio]:checked ~ label i.fa:before{
-  			color: #CCC;
-  		}
-  		label{
-  			width:35px;
-  		}
-  		
-	</style>
+  <title></title>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  <link rel="stylesheet" href="css/avaliacao.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <style type="text/css">
+    body{
+      background-color: #363636;
+      text-align: justify;
+      }
+    .well{
+      margin-left:30%;
+      margin-right:30%;
+    }
+    .btn.btn-primary{
+      width: 325px;
+      background-color: #43CD80;
+      border-color: transparent;
+    }
+    .estrelas1 input[type=radio] {
+      display: none;
+    }
+    .estrelas1 label i.fa:before {
+      content:'\f005';
+      font-size: 30px;
+      color: #FC0;
+    }
+    .estrelas1 input[type=radio]:checked ~ label i.fa:before{
+      color: #CCC;
+    }
+    .estrelas2 input[type=radio] {
+      display: none;
+    }
+    .estrelas2 label i.fa:before{
+      content:'\f005';
+      font-size: 30px;
+      color: #FC0;
+    }
+    .estrelas2 input[type=radio]:checked ~ label i.fa:before{
+      color: #CCC;
+    }
+    label{
+      width:30px;
+    }
+  </style>
 </head>
 <body>
 <div class="well">
+  <h3><i>Olá aluno {{matricula}}</i></h3><br>
 	<h3>Qual a qualidade da refeição oferecida pelo restaurante estudantil (R.E)?<br><br>
 	<br>
 <center><div class="estrelas1">
@@ -99,7 +100,7 @@
   	<input type="radio" id="cm_star-10-2" name="fb2" value="5"/>
 </div></center>
 	<br><br><br>
-	<center><button type="submit" class="btn btn-primary">Avaliar</button></center>
+	<center><button type="submit" class="btn btn-primary" onclick="">Avaliar</button></center>
 	<br><br><br>
 </div>
 </body>
