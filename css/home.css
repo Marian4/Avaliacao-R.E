@@ -1,4 +1,4 @@
-/*.well{
+.well{
 	margin:150px; 
 	margin-left:500px;
 	margin-right:500px;
@@ -12,7 +12,3 @@ button{
 	border-color:transparent;
 	background-color: #43CD80;
 }
-body{
-	background-image: url(img/background.jpg);
-	background-size: cover;
-}*/
