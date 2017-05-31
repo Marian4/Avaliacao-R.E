@@ -2,6 +2,11 @@
 <head>
   <title></title>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  <script type="text/javascript">
+    function mostrarMensagem($element, 'mensagem'){
+      document.getElementById('mensagem').style.display = 'block';
+    }
+  </script>
   <link rel="stylesheet" href="css/avaliacao.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -100,7 +105,7 @@
   	<input type="radio" id="cm_star-10-2" name="fb2" value="5"/>
 </div></center>
 	<br><br><br>
-	<center><button type="submit" class="btn btn-primary" onclick="">Avaliar</button></center>
+	<center><a href="#/"><button type="submit" class="btn btn-primary" onclick="setTimeout(function() {alert('sua avaliação foi computada.')}, 3000);">Avaliar</button></a></center>
 	<br><br><br>
 </div>
 </body>

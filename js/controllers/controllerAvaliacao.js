@@ -1,3 +1,4 @@
-angular.module("app").controller("ctrlAvaliacao",function($scope){
-	$scope.matricula = $scope.suamatricula;
+angular.module("app").controller("ctrlAvaliacao",function($scope/*, $mdToast*/){
+	var matricula = $scope.suamatricula;
+
 });
