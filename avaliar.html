@@ -1,0 +1,34 @@
+<div class="container">
+	Avaliar
+
+
+	<div layout="column">
+      <h3>Basic</h3>
+      <jk-rating-stars rating="firstRate" ></jk-rating-stars>
+      <div style="width: 100px">{{firstRate}} Stars</div>
+
+      <h3>10 Stars</h3>
+      <jk-rating-stars max-rating="10" rating="secondRate" ></jk-rating-stars>
+      <div style="width: 100px">{{secondRate}} Stars</div>
+
+      <h3>Read only</h3>
+      <jk-rating-stars rating="secondRate" read-only="readOnly" ></jk-rating-stars>
+      <div style="width: 100px">{{secondRate}} Stars</div>
+
+      <h3>With callbacks</h3>
+      <jk-rating-stars 
+        max-rating="7" 
+        rating="secondRate" 
+        on-rating="onItemRating(rating)">
+      </jk-rating-stars>
+      <div style="width: 100px">{{secondRate}} Stars</div>
+      
+      <h3>With cusomt style</h3>
+      <jk-rating-stars 
+        class="my-custom-stars"
+        rating="secondRate" >
+      </jk-rating-stars>
+
+      <md-button class="md-raised md-primary" ng-click="onItemRating()">Primary</md-button>
+    </div>
+</div>

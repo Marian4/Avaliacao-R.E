@@ -1,19 +1,12 @@
-app.config(function ($routeProvider, $locationProvider) {
-
+app.config(function ($routeProvider, $locationProvider) {    
+    
     // Remover a exclamação (!) da URL
     var SEM_PREFIXO = '';
     $locationProvider.hashPrefix(SEM_PREFIXO);
-
-    $routeProvider
-        .when("/", {
-            templateUrl: "home.html",
-			controller: "ctrlAvaliacao"
-
-        });
-    $routeProvider
-        .when("/avaliacao", {
-            templateUrl: "avaliacao.html",
-			controller: "ctrlAvaliacao"
-        });
+    
+    // Atualizar os módulos passados no app.js adicionando o 'ui.router'. 
+    // Mover todas as rotas já definidas no router.js para o arquivo state.js.
+    // Verificar o modelo utilizado para o $stateProvider presente no state.js que é diferente.
+    // Não esquecer de importar no index o script state.js .
+    // Mudar no index.html o atributo ng-view para o ui-view.    
 });
-/*acho q pra fazer com o da avaliação vc tem q separar o css dele e tbm tirar a ag html e deixar só o conteúdo (y)*/
