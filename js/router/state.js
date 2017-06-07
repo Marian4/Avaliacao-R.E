@@ -15,4 +15,5 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             templateUrl: 'avaliar.html',
             controller: 'avaliarController'
         })
+
 });

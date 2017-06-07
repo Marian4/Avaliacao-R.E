@@ -1,34 +1,17 @@
-<div class="container">
-	Avaliar
-
-
-	<div layout="column">
-      <h3>Basic</h3>
-      <jk-rating-stars rating="firstRate" ></jk-rating-stars>
-      <div style="width: 100px">{{firstRate}} Stars</div>
-
-      <h3>10 Stars</h3>
-      <jk-rating-stars max-rating="10" rating="secondRate" ></jk-rating-stars>
-      <div style="width: 100px">{{secondRate}} Stars</div>
-
-      <h3>Read only</h3>
-      <jk-rating-stars rating="secondRate" read-only="readOnly" ></jk-rating-stars>
-      <div style="width: 100px">{{secondRate}} Stars</div>
-
-      <h3>With callbacks</h3>
-      <jk-rating-stars 
-        max-rating="7" 
-        rating="secondRate" 
-        on-rating="onItemRating(rating)">
-      </jk-rating-stars>
-      <div style="width: 100px">{{secondRate}} Stars</div>
-      
-      <h3>With cusomt style</h3>
-      <jk-rating-stars 
-        class="my-custom-stars"
-        rating="secondRate" >
-      </jk-rating-stars>
-
-      <md-button class="md-raised md-primary" ng-click="onItemRating()">Primary</md-button>
-    </div>
+<div class="well" id="avaliar">
+		<h3><i>Olá aluno {{suamatricula}}</i></h3>
+		<br>
+		<h3>Qual a qualidade da refeição oferecida pelo restaurante estudantil (R.E)?
+		<br><br><br>
+	    <jk-rating-stars max-rating="10" rating="firstRate" id="estrelas"></jk-rating-stars>
+	    <!--div style="width: 100px">{{firstRate}} Stars</div-->
+	    <br><br>
+	    Qual a relevância do NUTRIF no processo de controle de entrada do R.E e pretensão da refeição?
+	    <br><br><br>
+	    <jk-rating-stars max-rating="10" rating="secondRate" id="estrelas"></jk-rating-stars>
+	    <br><br><br>
+	    <center>
+	    	<a href="#/"><button class="btn btn-primary" ng-click="onItemRating()">Avaliar</button></a>
+	    </center>
+	    <br><br><br>
 </div>

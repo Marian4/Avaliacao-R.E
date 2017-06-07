@@ -1,33 +1,20 @@
-.well{
+#home{
+	position: absolute;
 	margin-top: 16%;
+	margin-left: 40%;
 	width: 364px;
 	background-color: #363636;
 	border-color: #363636;
 
 }
-button{
-	width: 325px;
-}
 .btn.btn-primary{
 	border:none;
-	border-color:transparent;
 	background-color: #43CD80;
-
+	width: 325px;
 }
-input.value{
-	align-content: center;
-}
-.alert.alert-success{
-    width: 500px;
-    background-color: #363636;
-    color: #FFF;
-    position: absolute;
-    right:1%;
-    top:4%;
-    display:none;
-
-}
-input[type="text"]{
-	display: center;
+.btn.btn-primary:hover{
 }
 
+.mensagem{
+	width: 50%;
+}

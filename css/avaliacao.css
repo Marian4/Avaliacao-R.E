@@ -1,38 +1,7 @@
-/*body{
-	background-color:#363636;
-	text-align: justify;
-	}
-.well{
-	margin-left:250px;
-	margin-right:250px;
+#avaliar{
+	margin-left:27%;
+	margin-right:27%;
 }
-.btn.btn-primary{
-	width: 325px;
-	background-color: #43CD80;
-	border-color: transparent;
+#estrelas{
+	margin-left: 30%;
 }
-.estrelas1 input[type=radio] {
-	display: none;
-}
-.estrelas1 label i.fa:before {
- 	content:'\f005';
-  	font-size: 30px;
-  	color: #FC0;
-}
-.estrelas1 input[type=radio]:checked ~ label i.fa:before{
-  	color: #CCC;
-}
-.estrelas2 input[type=radio] {
-  	display: none;
-}
-.estrelas2 label i.fa:before {
-  	content:'\f005';
-  	font-size: 30px;
-  	color: #FC0;
-}
-.estrelas2 input[type=radio]:checked ~ label i.fa:before{
-  	color: #CCC;
-}
-label{
-  	width:35px;
-}*/
