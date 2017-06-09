@@ -1,17 +1,12 @@
 <div class="well" id="avaliar">
-		<h3><i>Olá aluno {{suamatricula}}</i></h3>
-		<br>
-		<h3>Qual a qualidade da refeição oferecida pelo restaurante estudantil (R.E)?
-		<br><br><br>
+		<h1><i>Olá aluno {{matricula}}</i></h1>
+		
+		<h2>Qual a qualidade da refeição oferecida pelo restaurante estudantil (R.E)?</h2>
 	    <jk-rating-stars max-rating="10" rating="firstRate" id="estrelas"></jk-rating-stars>
 	    <!--div style="width: 100px">{{firstRate}} Stars</div-->
-	    <br><br>
-	    Qual a relevância do NUTRIF no processo de controle de entrada do R.E e pretensão da refeição?
-	    <br><br><br>
+	    
+	    <h2>Qual a relevância do NUTRIF no processo de controle de entrada do R.E e pretensão da refeição?</h2>	
 	    <jk-rating-stars max-rating="10" rating="secondRate" id="estrelas"></jk-rating-stars>
-	    <br><br><br>
-	    <center>
-	    	<a href="#/"><button class="btn btn-primary" ng-click="onItemRating()">Avaliar</button></a>
-	    </center>
-	    <br><br><br>
+	    
+	    <button class="btn btn-primary" id="botaoAvaliar" ng-click="onItemRating()">Avaliar</button>
 </div>

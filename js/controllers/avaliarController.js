@@ -1,8 +1,10 @@
-app.controller("avaliarController", function($scope, $mdToast){
+app.controller("avaliarController", function($scope, $mdToast, $state, $stateParams){
 
-	$scope.firstRate = 0;
+    $scope.firstRate = 0;
     $scope.secondRate = 0;
     $scope.readOnly = true;
+
+    $scope.matricula = $stateParams.matricula;
     
     $scope.onItemRating = function(rating){
 
@@ -12,5 +14,6 @@ app.controller("avaliarController", function($scope, $mdToast){
                     .hideDelay(3000);
       $mdToast.show(toast);
 
+      $state.transitionTo("home", {reload: true});
     };
 });

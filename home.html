@@ -1,10 +1,10 @@
 <center>
 	<div class="well" id="home">
-		<center>
-			<label><h2><font color="white">Matrícula</font></h2></label></center>
-			<input type="text" placeholder="Digite sua matrícula" name="matricula" ng-model="suamatricula" required class="form-control"><br>
-		<center>
-			<a href="#/avaliar"><button type="submit" class="btn btn-primary" onclick= "/*verificar  a matricula*/">Entrar</button></a>
-		</center>
+			<label>
+				<h2>Matrícula</h2>
+			</label>
+			<input type="text" placeholder="Digite sua matrícula" name="matricula" ng-model="matricula" required class="form-control">
+		
+			<button type="submit" class="btn btn-primary" id="botaoHome" ng-click= "validarMatricula()">Entrar</button>
 	</div>
 </center>

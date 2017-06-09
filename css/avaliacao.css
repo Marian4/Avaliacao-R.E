@@ -3,5 +3,14 @@
 	margin-right:27%;
 }
 #estrelas{
+	margin-top: 60px;
+	margin-bottom: 60px;
 	margin-left: 30%;
+}
+#botaoAvaliar{
+	margin-left: 29%;
+	margin-bottom: 80px;
+}
+h1{
+	padding-bottom: 50px;
 }

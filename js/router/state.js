@@ -11,7 +11,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             controller: 'logarController'
         })
         .state('avaliar', {
-            url: '/avaliar',
+            url: '/avaliar/:matricula',
             templateUrl: 'avaliar.html',
             controller: 'avaliarController'
         })

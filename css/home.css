@@ -12,9 +12,13 @@
 	background-color: #43CD80;
 	width: 325px;
 }
-.btn.btn-primary:hover{
-}
 
 .mensagem{
 	width: 50%;
+}
+#botaoHome{
+	margin-top: 9px;
+}
+label{
+	color: white;
 }
