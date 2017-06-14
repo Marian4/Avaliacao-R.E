@@ -6,6 +6,9 @@ app.factory("alunoService", function($http, config){
 		return $http.get(_path + "/consultar/matricula/" + matricula)
 	};
 	
+	/*
+		"aluno":{"matricula":"", "senha":""}
+	*/
 	var _fazerLogin = function (aluno){
 		return $http.post(_path + "/login", aluno)
 	};
