@@ -1,34 +1,24 @@
-.well{
-	margin:15%; 
-	margin-left:40%;
-	margin-right:40%;
-	margin-bottom:15%;
+#home{
+	position: absolute;
+	margin-top: 16%;
+	margin-left: 40%;
 	width: 364px;
 	background-color: #363636;
 	border-color: #363636;
 
 }
-button{
-	width: 325px;
-}
 .btn.btn-primary{
 	border:none;
-	border-color:transparent;
 	background-color: #43CD80;
+	width: 325px;
+}
 
+.mensagem{
+	width: 50%;
 }
-input.value{
-	align-content: center;
+#botaoHome{
+	margin-top: 9px;
 }
-.alert.alert-success{
-    width: 500px;
-    background-color: #363636;
-    color: #FFF;
-    position: absolute;
-    right:10px;
-    top:25px;
-
-}
-input[type="text"]{
-	display: center;
+label{
+	color: white;
 }
