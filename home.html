@@ -3,8 +3,13 @@
 			<label>
 				<h2>Matrícula</h2>
 			</label>
-			<input type="text" placeholder="Digite sua matrícula" name="matricula" ng-model="matricula" required class="form-control">
+			<input type="text" placeholder="Digite sua matrícula" name="matricula" ng-model="aluno.matricula" required class="form-control">
+        
+            <label>
+				<h2>Senha</h2>
+			</label>
+			<input type="password" placeholder="Digite sua senha" name="senha" ng-model="aluno.senha" required class="form-control">
 		
-			<button type="submit" class="btn btn-primary" id="botaoHome" ng-disabled="!matricula" ng-click= "validarMatricula()">Entrar</button>
+			<button type="submit" class="btn btn-primary" id="botaoHome" ng-disabled="!aluno.matricula" ng-click= "login()">Entrar</button>
 	</div>
 </center>

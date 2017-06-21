@@ -1,8 +1,10 @@
 from flask import Flask, request, jsonify, make_response
+from flask_api import status
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 from JsonUtils import convert_input_to, json_repr
 from Aluno import Aluno
+from Erro import Erro
 import json
 
 app = Flask(__name__)
@@ -17,26 +19,30 @@ class tb_aluno(db.Model):
     def __repr__(self):
         return self.matricula
 
+@app.route("/", methods=['GET'])
+def buscarAlunoPorMatricula(matricula):
+    print("GET")
+    return "Ola"
+
 @app.route("/aluno/consultar/matricula/<int:matricula>", methods=['GET'])
 def buscarAlunoPorMatricula(matricula):
-	print("GET")
+    print("GET")
 
-	return ""
+    return ""
 
 @app.route("/aluno/login", methods=['POST'])
 @convert_input_to(Aluno)
 def login(aluno):
-	# Converter JSON para Objeto.
-	print(aluno.matricula)
-	# Consultar os dados do Aluno no Banco de Dados.
-	query = map(str, tb_aluno.query.all()) # Transformando todos os itens da lista (consulta) em string
-	if str(aluno.matricula) in query:
-		print("Logado!")
-		# Enviar os dados na resposta
-		return make_response(json_repr(aluno))
-	else:
-		# Retornar erro
-		print("Erro de autenticação!")
-		return "Erro"
+    # Converter JSON para Objeto.
+    print(aluno.matricula)
+    # Consultar os dados do Aluno no Banco de Dados.
+    query = map(str, tb_aluno.query.all()) # Transformando todos os itens da lista (consulta) em string
+    if str(aluno.matricula) in query:
+        print("Logado!")
+        # Enviar os dados na resposta
+        return (make_response(json_repr(aluno)), status.HTTP_200_OK)
+    else:
+        erro = Erro("Aluno nao encontrado")
+        return (erro, status.HTTP_404_NOT_FOUND)
 
 app.run(debug=True, use_reloader=True)

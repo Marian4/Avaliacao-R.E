@@ -8,7 +8,7 @@ app.value("config", {
 		var _externalDNS = "localhost";
 		var _externalIP = "127.0.0.1";
 		var _internalIP = "127.0.0.1";
-		var _port = "9000"; // Informa a porta do serviço.
+		var _port = "5000"; // Informa a porta do serviço.
 		var _context = ""; // Informa a base do contexto
 
 		var url = location.href;

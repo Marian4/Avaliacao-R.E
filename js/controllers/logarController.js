@@ -1,6 +1,6 @@
 app.controller("logarController", function($scope, $mdToast, $state, $stateParams, alunoService){
-	
-	$scope.matricula;
+    
+    $scope.aluno;
 
 	$scope.validarMatricula = function() {
 		
@@ -21,7 +21,18 @@ app.controller("logarController", function($scope, $mdToast, $state, $stateParam
 		});
 	}
 
-	var outraFuncao = function(){
-
+	$scope.login = function(){
+        
+        var aluno = $scope.aluno;
+		// Capturar a matrícula.
+		// Enviar requisição para o serviço.
+		alunoService.fazerLogin(aluno)
+			.then(function(response){
+				console.log("Retornou com sucesso!");
+				// Encaminha para a página de avaliação.
+			})
+			.catch(function(data){
+				console.log("Retornou com problema!");
+			});
 	}
 });
