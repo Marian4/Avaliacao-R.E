@@ -1,4 +1,4 @@
-app.controller("avaliarController", function($scope, $mdToast, $state, $stateParams){
+app.controller("avaliarController", function($scope, $mdToast, $state, $stateParams, alunoService){
 
     $scope.firstRate = 0;
     $scope.secondRate = 0;
@@ -16,4 +16,14 @@ app.controller("avaliarController", function($scope, $mdToast, $state, $statePar
 
       $state.transitionTo("home", {reload: true});
     };
+
+    carregarAluno = function(matricula){
+        alunoService.buscarAlunoPorMatricula(matricula)
+            .then(function(response){
+                $scope.aluno = response.data;
+            });
+
+    };
+
+    carregarAluno($scope.matricula);
 });

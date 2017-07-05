@@ -28,11 +28,20 @@ app.controller("logarController", function($scope, $mdToast, $state, $stateParam
 		// Enviar requisição para o serviço.
 		alunoService.fazerLogin(aluno)
 			.then(function(response){
-				console.log("Retornou com sucesso!");
+				aluno = response.data;
+
 				// Encaminha para a página de avaliação.
+				$state.transitionTo("avaliar", {
+                    matricula: aluno.matricula
+                });
 			})
 			.catch(function(data){
-				console.log("Retornou com problema!");
+				console.log(data.status);
+				var toast = $mdToast.simple()
+                    .textContent('Dados de login incorretos, tente novamente.')
+                    .position('top right')
+                    .hideDelay(3000);
+                $mdToast.show(toast);
 			});
 	}
 });

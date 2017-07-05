@@ -5,9 +5,6 @@ from flask_cors import CORS
 from JsonUtils import convert_input_to, json_repr
 from Erro import Erro
 import json
-import sys
-
-#sys.setrecursionlimit(10000)
 
 # Aplicação Flask
 app = Flask(__name__)
@@ -37,25 +34,34 @@ def index():
     print("GET")
     return "Ola"
 
-@app.route("/aluno/consultar/matricula/<int:matricula>", methods=['GET'])
+@app.route("/aluno/matricula/<int:matricula>", methods=['GET'])
 def buscarAlunoPorMatricula(matricula):
-    print("GET")
 
-    return ""
+    # Consultar os dados do Aluno no Banco de Dados.
+    aluno = Aluno.query.filter_by(matricula=matricula).first()
+
+
+    if aluno != None:
+        del(aluno.__dict__['_sa_instance_state'])
+
+        # Enviar os dados na resposta
+        return (json.dumps(aluno.__dict__), status.HTTP_200_OK)
+    else:
+        erro = Erro("Aluno nao encontrado")
+        return (erro.mensagem, status.HTTP_404_NOT_FOUND)
 
 @app.route("/aluno/login", methods=['POST'])
 @convert_input_to(Aluno)
 def login(aluno):
     # Converter JSON para Objeto.
     matricula = aluno.matricula
+    senha = aluno.senha
     # Consultar os dados do Aluno no Banco de Dados.
-    aluno = Aluno.query.filter_by(matricula=matricula).first()
+    aluno = Aluno.query.filter_by(matricula=matricula, senha=senha).first()
 
     if aluno != None:
-        print("Aluno:" + aluno.senha)
-        print("Logado!")
         del(aluno.__dict__['_sa_instance_state'])
-        print(aluno.__dict__)
+
         # Enviar os dados na resposta
         return (json.dumps(aluno.__dict__), status.HTTP_200_OK)
     else:
