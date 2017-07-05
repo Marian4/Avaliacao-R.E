@@ -3,24 +3,37 @@ from flask_api import status
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 from JsonUtils import convert_input_to, json_repr
-from Aluno import Aluno
 from Erro import Erro
 import json
+import sys
 
+#sys.setrecursionlimit(10000)
+
+# Aplicação Flask
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:@localhost/avaliacao' # mysql://usuario:senha@localhost/nomedobanco
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:ladossifpb@localhost/nutrif' # mysql://usuario:senha@localhost/nomedobanco
+
+# Conexão com o Banco de Dados
 db = SQLAlchemy(app)
-db.Model.metadata.reflect(db.engine)
+#db.Model.metadata.reflect(db.engine)
 CORS(app)
 
-class tb_aluno(db.Model):
-    __table__ = db.Model.metadata.tables['tb_aluno']
+class Aluno(db.Model):
+    __tablename__ = 'tb_aluno'
+    id = db.Column('id', db.Integer, primary_key=True, autoincrement=True)
+    matricula = db.Column('nm_matricula', db.String(13))
+    senha = db.Column('nm_senha', db.String(77))
+    isacesso = db.Column('is_acesso', db.Boolean)
+    nome = db.Column('nm_nome', db.String(77))
+    email = db.Column('nm_email', db.String(77))
+    isativo = db.Column('is_ativo', db.Boolean)
 
-    def __repr__(self):
-        return self.matricula
+    def __init__(self, matricula, senha):
+        self.matricula = matricula
+        self.senha = senha
 
 @app.route("/", methods=['GET'])
-def buscarAlunoPorMatricula(matricula):
+def index():
     print("GET")
     return "Ola"
 
@@ -34,15 +47,19 @@ def buscarAlunoPorMatricula(matricula):
 @convert_input_to(Aluno)
 def login(aluno):
     # Converter JSON para Objeto.
-    print(aluno.matricula)
+    matricula = aluno.matricula
     # Consultar os dados do Aluno no Banco de Dados.
-    query = map(str, tb_aluno.query.all()) # Transformando todos os itens da lista (consulta) em string
-    if str(aluno.matricula) in query:
+    aluno = Aluno.query.filter_by(matricula=matricula).first()
+
+    if aluno != None:
+        print("Aluno:" + aluno.senha)
         print("Logado!")
+        del(aluno.__dict__['_sa_instance_state'])
+        print(aluno.__dict__)
         # Enviar os dados na resposta
-        return (make_response(json_repr(aluno)), status.HTTP_200_OK)
+        return (json.dumps(aluno.__dict__), status.HTTP_200_OK)
     else:
         erro = Erro("Aluno nao encontrado")
-        return (erro, status.HTTP_404_NOT_FOUND)
+        return (erro.mensagem, status.HTTP_404_NOT_FOUND)
 
 app.run(debug=True, use_reloader=True)
