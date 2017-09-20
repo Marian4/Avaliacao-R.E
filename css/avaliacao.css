@@ -14,3 +14,16 @@
 h1{
 	padding-bottom: 50px;
 }
+input{	
+	float: left;
+}
+
+h2{
+	text-align: justify;
+}
+.p11{
+	min-height: 100px;
+	max-height: 500px;
+	min-width: 100px;
+	max-width: 500px;
+}

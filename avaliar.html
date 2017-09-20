@@ -1,12 +1,41 @@
 <div class="well" id="avaliar">
 		<h1><i>Olá aluno(a) {{aluno.nome}}</i></h1>
 		
-		<h2>Qual a qualidade da refeição oferecida pelo restaurante estudantil (R.E)?</h2>
-	    <jk-rating-stars max-rating="10" rating="firstRate" id="estrelas"></jk-rating-stars>
+		<!--<h2>Qual a qualidade da refeição oferecida pelo restaurante estudantil (R.E)?</h2>
+	    <jk-rating-stars max-rating="10" rating="firstRate" id="estrelas"></jk-rating-stars>-->
 	    <!--div style="width: 100px">{{firstRate}} Stars</div-->
 	    
-	    <h2>Qual a relevância do NUTRIF no processo de controle de entrada do R.E e pretensão da refeição?</h2>	
+	    <!--<h2>Qual a relevância do NUTRIF no processo de controle de entrada do R.E e pretensão da refeição?</h2>	
+	    <jk-rating-stars max-rating="10" rating="secondRate" id="estrelas"></jk-rating-stars>-->
+	    <h2>4-Como você avalia o atendimento do restaurante estudantil?</h2>
 	    <jk-rating-stars max-rating="10" rating="secondRate" id="estrelas"></jk-rating-stars>
-	    
+	    <h2>5-Como você avalia a qualidade(sabor, apresentação e textura) das refeições servidas?</h2>
+	    <input type="radio" name="p5" value="ótimo"><h4>Ótimo</h4>
+	    <input type="radio" name="p5" value="bom"><h4>Bom</h4>
+	    <input type="radio" name="p5" value="regular"><h4>Regular</h4>
+	    <input type="radio" name="p5" value="ruim"><h4>Ruim</h4>
+	    <h2>6-Como você avalia a quantidade de proteína(carnes) servidas?</h2>
+	    <input type="radio" name="p6" value="ótimo"><h4>Ótimo</h4>
+	    <input type="radio" name="p6" value="bom"><h4>Bom</h4>
+	    <input type="radio" name="p6" value="regular"><h4>Regular</h4>
+	    <input type="radio" name="p6" value="ruim"><h4>Ruim</h4>
+	    <h2>7-Como você avalia a higiene dos alimentos oferecidos?</h2>
+	    <input type="radio" name="p7" value="ótimo"><h4>Ótimo</h4>
+	    <input type="radio" name="p7" value="bom"><h4>Bom</h4>
+	    <input type="radio" name="p7" value="regular"><h4>Regular</h4>
+	    <input type="radio" name="p7" value="ruim"><h4>Ruim</h4>
+	    <h2>8-Como você avalia a variedade das refeições servidas?</h2>
+	    <input type="radio" name="p8" value="ótimo"><h4>Ótimo</h4>
+	    <input type="radio" name="p8" value="bom"><h4>Bom</h4>
+	    <input type="radio" name="p8" value="regular"><h4>Regular</h4>
+	    <input type="radio" name="p8" value="ruim"><h4>Ruim</h4>
+	    <h2>9-Como você avalia a higiene das instalações do Restaurante Estudantil?</h2>
+	    <input type="radio" name="p9" value="ótimo"><h4>Ótimo</h4>
+	    <input type="radio" name="p9" value="bom"><h4>Bom</h4>
+	    <input type="radio" name="p9" value="regular"><h4>Regular</h4>
+	    <input type="radio" name="p9" value="ruim"><h4>Ruim</h4>
+	    <h2>Como você avalia a reposição das preparações no balcão de distribuição?</h2>
+	    <h2>Deixe aqui sua opinião, crítica ou elogio a respeito dos serviços prestados e refeições oferecidas no Restaurante Estudantil:</h2>
+	    <div><input type="text" name="p11" class="p11"></div>
 	    <button class="btn btn-primary" id="botaoAvaliar" ng-click="onItemRating()">Avaliar</button>
 </div>
