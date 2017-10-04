@@ -16,9 +16,12 @@
 .mensagem{
 	width: 50%;
 }
-#botaoHome{
+/*#botaoHome{
 	margin-top: 9px;
-}
+}*/
 label{
 	color: white;
+}
+.form-control{
+	margin-bottom: 9px;
 }

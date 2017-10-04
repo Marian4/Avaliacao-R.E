@@ -8,7 +8,7 @@ import json
 
 # Aplicação Flask
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:ifpbinfo@localhost/nutrif' # mysql://usuario:senha@localhost/nomedobanco
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:ifpbinfo@10.1.134.157/nutrif' # mysql://usuario:senha@localhost/nomedobanco
 
 # Conexão com o Banco de Dados
 db = SQLAlchemy(app)

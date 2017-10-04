@@ -10,6 +10,7 @@
 #botaoAvaliar{
 	margin-left: 29%;
 	margin-bottom: 80px;
+	margin-top: 40px;
 }
 h1{
 	padding-bottom: 50px;
@@ -20,10 +21,14 @@ input{
 
 h2{
 	text-align: justify;
+	padding-top: 15px;
+	padding-bottom: 15px;
 }
-.p11{
-	min-height: 100px;
-	max-height: 500px;
-	min-width: 100px;
-	max-width: 500px;
+
+select{
+	width: 200px;
+	height: 30px
+
 }
+
+	
