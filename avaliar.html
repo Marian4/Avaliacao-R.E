@@ -7,54 +7,58 @@
 	    
 	    <!--<h2>Qual a relevância do NUTRIF no processo de controle de entrada do R.E e pretensão da refeição?</h2>	
 	    <jk-rating-stars max-rating="10" rating="secondRate" id="estrelas"></jk-rating-stars>-->
-	    <h2>Sexo:</h2>
-	    <font size="3"><select>
-	    	<option>Feminino</option>
-	    	<option>Masculino</option>
-	    </select></font>
-	    <h2>Qual refeição você costuma realizar no Restaurante Estudantil?</h2>
-	    <font size="3"><select>
-	    	<option>Almoço</option>
-	    	<option>Jantar</option>
-	    </select></font>
-	    <h2>Com qual frequência você utiliza o Restaurante Estudantil?</h2>
-	    <input type="radio" name="p3" value="1 ou 2 vezes/semana"><h4>1 ou 2 vezes/semana</h4>
-	    <input type="radio" name="p3" value="3 ou 4 vezes/semana"><h4>3 ou 4 vezes/semana</h4>
-	    <input type="radio" name="p3" value="Todos os dias"><h4>Todos os dias</h4>
-	    <h2>Como você avalia o atendimento do restaurante estudantil?</h2>
-	    <jk-rating-stars max-rating="10" rating="secondRate" id="estrelas"></jk-rating-stars>
-	    <h2>Como você avalia a qualidade(sabor, apresentação e textura) das refeições servidas?</h2>
-	    <input type="radio" name="p5" value="ótimo"><h4>Ótimo</h4>
-	    <input type="radio" name="p5" value="bom"><h4>Bom</h4>
-	    <input type="radio" name="p5" value="regular"><h4>Regular</h4>
-	    <input type="radio" name="p5" value="ruim"><h4>Ruim</h4>
-	    <h2>Como você avalia a quantidade de proteína(carnes) servidas?</h2>
-	    <input type="radio" name="p6" value="ótimo"><h4>Ótimo</h4>
-	    <input type="radio" name="p6" value="bom"><h4>Bom</h4>
-	    <input type="radio" name="p6" value="regular"><h4>Regular</h4>
-	    <input type="radio" name="p6" value="ruim"><h4>Ruim</h4>
-	    <h2>Como você avalia a higiene dos alimentos oferecidos?</h2>
-	    <input type="radio" name="p7" value="ótimo"><h4>Ótimo</h4>
-	    <input type="radio" name="p7" value="bom"><h4>Bom</h4>
-	    <input type="radio" name="p7" value="regular"><h4>Regular</h4>
-	    <input type="radio" name="p7" value="ruim"><h4>Ruim</h4>
-	    <h2>Como você avalia a variedade das refeições servidas?</h2>
-	    <input type="radio" name="p8" value="ótimo"><h4>Ótimo</h4>
-	    <input type="radio" name="p8" value="bom"><h4>Bom</h4>
-	    <input type="radio" name="p8" value="regular"><h4>Regular</h4>
-	    <input type="radio" name="p8" value="ruim"><h4>Ruim</h4>
-	    <h2>Como você avalia a higiene das instalações do Restaurante Estudantil?</h2>
-	    <input type="radio" name="p9" value="ótimo"><h4>Ótimo</h4>
-	    <input type="radio" name="p9" value="bom"><h4>Bom</h4>
-	    <input type="radio" name="p9" value="regular"><h4>Regular</h4>
-	    <input type="radio" name="p9" value="ruim"><h4>Ruim</h4>
-	    <h2>Como você avalia a reposição das preparações no balcão de distribuição?</h2>
-	    <input type="radio" name="p10" value="Rápida"><h4>Rápida, sempre</h4>
-	    <input type="radio" name="p10" value="Regular"><h4>Às vezes deixa a desejar</h4>
-	    <input type="radio" name="p10" value="Ruim"><h4>Demorada, sempre</h4>
-	    <h2>Deixe aqui sua opinião, crítica ou elogio a respeito dos serviços prestados e refeições oferecidas no Restaurante Estudantil:</h2>
+	    <h2>{{perguntas.p1}}</h2>
+	    <font size="3">
+			<select ng-model="respostas.p1">
+				<option value="Feminino" >Feminino</option>
+				<option value="Masculino">Masculino</option>
+	    	</select>
+		</font>
+	    <h2>{{perguntas.p2}}</h2>
+	    <font size="3">
+			<select ng-model="respostas.p2">
+				<option value="Almoço">Almoço</option>
+				<option value="Jantar">Jantar</option>
+	    	</select>
+		</font>
+	    <h2>{{perguntas.p3}}</h2>
+	    <input type="radio" name="p3" ng-model="respostas.p3" value="1 ou 2 vezes/semana"><h4>1 ou 2 vezes/semana</h4>
+	    <input type="radio" name="p3" ng-model="respostas.p3" value="3 ou 4 vezes/semana"><h4>3 ou 4 vezes/semana</h4>
+	    <input type="radio" name="p3" ng-model="respostas.p3" value="Todos os dias"><h4>Todos os dias</h4>
+	    <h2>{{perguntas.p4}}</h2>
+	    <jk-rating-stars max-rating="10" rating="respostas.p4" id="estrelas"></jk-rating-stars>
+	    <h2>{{perguntas.p5}}</h2>
+	    <input type="radio" name="p5" ng-model="respostas.p5" value="ótimo"><h4>Ótimo</h4>
+	    <input type="radio" name="p5" ng-model="respostas.p5" value="bom"><h4>Bom</h4>
+	    <input type="radio" name="p5" ng-model="respostas.p5" value="regular"><h4>Regular</h4>
+	    <input type="radio" name="p5" ng-model="respostas.p5" value="ruim"><h4>Ruim</h4>
+	    <h2>{{perguntas.p6}}</h2>
+	    <input type="radio" name="p6" ng-model="respostas.p6" value="ótimo"><h4>Ótimo</h4>
+	    <input type="radio" name="p6" ng-model="respostas.p6" value="bom"><h4>Bom</h4>
+	    <input type="radio" name="p6" ng-model="respostas.p6" value="regular"><h4>Regular</h4>
+	    <input type="radio" name="p6" ng-model="respostas.p6" value="ruim"><h4>Ruim</h4>
+	    <h2>{{perguntas.p7}}</h2>
+	    <input type="radio" name="p7" ng-model="respostas.p7" value="ótimo"><h4>Ótimo</h4>
+	    <input type="radio" name="p7" ng-model="respostas.p7" value="bom"><h4>Bom</h4>
+	    <input type="radio" name="p7" ng-model="respostas.p7" value="regular"><h4>Regular</h4>
+	    <input type="radio" name="p7" ng-model="respostas.p7" value="ruim"><h4>Ruim</h4>
+	    <h2>{{perguntas.p8}}</h2>
+	    <input type="radio" name="p8" ng-model="respostas.p8" value="ótimo"><h4>Ótimo</h4>
+	    <input type="radio" name="p8" ng-model="respostas.p8" value="bom"><h4>Bom</h4>
+	    <input type="radio" name="p8" ng-model="respostas.p8" value="regular"><h4>Regular</h4>
+	    <input type="radio" name="p8" ng-model="respostas.p8" value="ruim"><h4>Ruim</h4>
+	    <h2>{{perguntas.p9}}</h2>
+	    <input type="radio" name="p9" ng-model="respostas.p9" value="ótimo"><h4>Ótimo</h4>
+	    <input type="radio" name="p9" ng-model="respostas.p9" value="bom"><h4>Bom</h4>
+	    <input type="radio" name="p9" ng-model="respostas.p9" value="regular"><h4>Regular</h4>
+	    <input type="radio" name="p9" ng-model="respostas.p9" value="ruim"><h4>Ruim</h4>
+	    <h2>{{perguntas.p10}}</h2>
+	    <input type="radio" name="p10" ng-model="respostas.p10" value="Rápida"><h4>Rápida, sempre</h4>
+	    <input type="radio" name="p10" ng-model="respostas.p10" value="Regular"><h4>Às vezes deixa a desejar</h4>
+	    <input type="radio" name="p10" ng-model="respostas.p10" value="Ruim"><h4>Demorada, sempre</h4>
+	    <h2>{{perguntas.p11}}</h2>
 	    <div align="center">
-	        <textarea name="p11" placeholder="Deixe aqui sua opinião..." rows="7" cols="100" ></textarea>
+	        <textarea name="p11" placeholder="Deixe aqui sua opinião..." ng-model="respostas.p11" rows="7" cols="100" ></textarea>
 	    </div>
 	    <button class="btn btn-primary" id="botaoAvaliar" ng-click="onItemRating()">Avaliar</button>
 </div>

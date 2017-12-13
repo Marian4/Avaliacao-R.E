@@ -8,13 +8,14 @@ import json
 
 # Aplicação Flask
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:ifpbinfo@10.1.134.157/nutrif' # mysql://usuario:senha@localhost/nomedobanco
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:ifpbinfo@localhost/avaliacao' # mysql://usuario:senha@localhost/nomedobanco
 
 # Conexão com o Banco de Dados
 db = SQLAlchemy(app)
 #db.Model.metadata.reflect(db.engine)
 CORS(app)
 
+#MApeamento da Tabela Aluno
 class Aluno(db.Model):
     __tablename__ = 'tb_aluno'
     id = db.Column('id', db.Integer, primary_key=True, autoincrement=True)
@@ -28,6 +29,29 @@ class Aluno(db.Model):
     def __init__(self, matricula, senha):
         self.matricula = matricula
         self.senha = senha
+
+#Mapeamento da Tabela Questao
+class Questao(db.Model):
+    __tablename__ = 'tb_questao'
+    id = db.Column('id', db.Integer, primary_key=True, autoincrement=True)
+    pergunta = db.Column('pergunta', db.String)
+
+    def __init__(self, pergunta):
+        self.pergunta = pergunta
+
+#Mapeamento da Tabela tb_resposta
+class Resposta(db.Model):
+    __tablename__ = 'tb_resposta'
+    id = db.Column('id', db.Integer, primary_key=True, autoincrement=True)
+    idQuestao = db.Column('id_questao', db.Integer, db.ForeignKey('tb_questao.id'))
+    idAluno = db.Column('id_aluno', db.Integer, db.ForeignKey('tb_aluno.id'))
+    nota = db.Column('nota', db.String)
+
+    def __init__(self, idQuestao, idAluno, nota):
+        self.idQuestao = idQuestao
+        self.idAluno = idAluno
+        self.nota = nota
+
 
 @app.route("/", methods=['GET'])
 def index():
@@ -67,5 +91,41 @@ def login(aluno):
     else:
         erro = Erro("Aluno nao encontrado")
         return (erro.mensagem, status.HTTP_404_NOT_FOUND)
+
+
+@app.route("/aluno/perguntas", methods=["GET"])
+def buscarPerguntas():
+    perguntas = Questao.query.all()
+    perguntasJson = {}
+
+    for pergunta in perguntas:
+        del(pergunta.__dict__['_sa_instance_state'])
+        pergunta = pergunta.__dict__
+
+        perguntasJson["p" + str(pergunta["id"])] = pergunta["pergunta"]
+
+    perguntasJson = json.dumps(perguntasJson)
+    return perguntasJson
+
+
+
+@app.route("/aluno/resposta", methods=["POST"])
+def enviarRespostas():
+    posts = request.json
+
+    respostas = posts['respostas']
+    idAluno = posts['id']
+
+
+    for resposta in respostas:
+
+        idQuestao = resposta.replace('p', '')
+        nota = respostas[resposta]
+        resposta = Resposta(idQuestao,idAluno,nota)
+        db.session.add(resposta)
+        db.session.commit()
+
+    return "OK",200
+
 
 app.run(debug=True, use_reloader=True)
